@@ -2,7 +2,7 @@ import {GetShows} from './GetShows';
 import {MockShowsRepository} from '../repositories/MockShowsRepository'
 
 describe('Get shows interactor', () => {
-  const getShows = new GetShows(new MockShowsRepository);
+  const getShows = new GetShows(new MockShowsRepository());
   it('should return an array of x elements', () => {
     getShows.getShowsByQuery().then(shows => {
       expect(shows.length).toBe(10);

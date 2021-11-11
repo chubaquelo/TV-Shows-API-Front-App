@@ -58,8 +58,8 @@ export interface Externals {
 }
 
 export interface Image {
-  medium: string | null;
-  original: string | null;
+  medium: string | undefined;
+  original: string | undefined;
 }
 
 export interface Links {
