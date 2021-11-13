@@ -10,4 +10,8 @@ export class GetShows {
   getShowsByQuery(query: string = 'girls') {
     return this.showsRepository.getShowsByQuery(query);
   }
+
+  getShowById(id: string = '33320') {
+    return this.showsRepository.getShowById(id);
+  }
 }

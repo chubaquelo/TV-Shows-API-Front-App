@@ -1,7 +1,7 @@
 import React from 'react';
-import { Box, Image, Text, Link } from '@chakra-ui/react';
+import { Box, Image, Text, Flex, VStack, HStack, Button } from '@chakra-ui/react';
 import { Show } from '../../core/entities/show';
-
+import { Link } from 'react-router-dom';
 interface ShowCardProps {
   show: Show;
 }
@@ -11,16 +11,20 @@ const ShowCard = (props: ShowCardProps) => {
   const imageSrc = show.image?.medium ? show.image?.medium : 'https://via.placeholder.com/210x295.png?text=No+Image';
 
   return (
-    <Box width={'210px'} heigth={'295px'}>
-      <Image src={imageSrc} alt={`${show.name}`} />
+    <Flex justifyContent={'center'} width={'full'}>
+      <VStack alignItems={'center'}>
+        <Image width={'210px'} heigth={'295px'} src={imageSrc} alt={`${show.name}`} />
+        <HStack justifyContent={'space-between'} width={'full'}>
+          <Text fontSize={'sm'}>{show.name}</Text>
 
-      <Text fontSize={'sm'}>
-        {show.name}
-        <Link paddingLeft={2} color='teal.500' href='#'>
-          More Info
-        </Link>
-      </Text>
-    </Box>
+          <Link to={`/${show.id}`}>
+            <Button color={'blue.400'} fontSize={'sm'}>
+              More Info
+            </Button>
+          </Link>
+        </HStack>
+      </VStack>
+    </Flex>
   );
 }
 

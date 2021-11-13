@@ -7,4 +7,5 @@ export interface IAPIResponseShow {
 
 export interface IShowsRepository {
   getShowsByQuery(query: string): Promise<IAPIResponseShow[]>
+  getShowById(id: string): Promise<Show>
 }
