@@ -50,16 +50,15 @@ const SingleShow = () => {
   }, [showId]);
 
   const mapShowProperties = (show: any) => {
-    let mappedProperties: any = [];
     let filteredShow: any = {};
     Object.keys(show).map(key => {
       ['name', 'type', 'language', 'status', 'officialSite'].includes(key) && (filteredShow[key] = show[key]);
     });
-    mappedProperties = Object.keys(filteredShow).map(key => {
+    const mappedProperties = Object.keys(filteredShow).map(key => {
       return (
         <Tr>
-          <Td>{key}</Td>
-          <Td>{filteredShow[key]}</Td>
+          <Td>{key.charAt(0).toUpperCase() + key.slice(1)}</Td>
+          <Td>{filteredShow[key] || 'No data'}</Td>
         </Tr>
       );
     });
@@ -68,26 +67,20 @@ const SingleShow = () => {
 
   return (
     <>
-      {isLoadingPage ? (
+      {isLoadingPage && !hasError ? (
         <LoadingPage />
       ) : (
         <>
-          <HStack marginBottom={5}>
-            <Link to='/'>
-              <Button>Go Back!</Button>
-            </Link>
-            <Heading width={'80%'} textAlign={'center'}>
-              Show: {show?.name}
-            </Heading>
-          </HStack>
-          <Table variant='simple' marginTop={5}>
-            <Thead>
-              <Tr>
-                <Th>Property</Th>
-                <Th>Value</Th>
-              </Tr>
-            </Thead>
-            <Tbody>{mapShowProperties(show)}</Tbody>
+            <HStack marginBottom={14}>
+              <Link to='/'>
+                <Button>Go Back!</Button>
+              </Link>
+              <Heading width={'80%'} textAlign={'center'}>
+                {show ? `Show: ${show?.name}` : 'Some error ocurred. Wrong request.'}
+              </Heading>
+            </HStack>
+          <Table variant='simple' marginTop={5} width={'50%'} marginX={'auto'}>
+            <Tbody>{show && mapShowProperties(show)}</Tbody>
           </Table>
         </>
       )}
