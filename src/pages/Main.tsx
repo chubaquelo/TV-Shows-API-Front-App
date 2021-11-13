@@ -3,7 +3,7 @@ import { Container, HStack, Spinner, VStack, Text, Center, Alert, AlertIcon, Sim
 import { IAPIResponseShow } from '../core/adapters/IShowsRepository';
 import { GetShows } from '../core/interactors/GetShows';
 import { APIShowsRepository } from '../core/repositories/APIShowsRepository';
-import ShowCard from '../components/showCard/showCard';
+import ShowCard from '../components/showCard/ShowCard';
 import LoadingPage from '../components/utils/loadingPage';
 
 const Main = () => {

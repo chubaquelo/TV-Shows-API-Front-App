@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Image, Text, Flex, VStack, HStack, Button } from '@chakra-ui/react';
 import { Show } from '../../core/entities/show';
 import { Link } from 'react-router-dom';
+
 interface ShowCardProps {
   show: Show;
 }

@@ -1,31 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import {
-  Container,
-  HStack,
-  Spinner,
-  VStack,
-  Text,
-  Center,
-  Alert,
-  AlertIcon,
-  SimpleGrid,
-  Box,
-  Table,
-  TableCaption,
-  Thead,
-  Tr,
-  Th,
-  Tbody,
-  Td,
-  Tfoot,
-  Heading,
-  Button,
-} from '@chakra-ui/react';
 import { GetShows } from '../core/interactors/GetShows';
 import { APIShowsRepository } from '../core/repositories/APIShowsRepository';
 import LoadingPage from '../components/utils/loadingPage';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Show } from '../core/entities/show';
+import SinglePageHeader from '../components/singlePageHeader/SinglePageHeader';
+import {
+  HStack,
+  Alert,
+  AlertIcon,
+  Table,
+  Tr,
+  Tbody,
+  Td,
+  Image,
+  AspectRatio,
+} from '@chakra-ui/react';
 
 const SingleShow = () => {
   const [isLoadingPage, setIsLoadingPage] = useState<boolean>(true);
@@ -49,12 +39,12 @@ const SingleShow = () => {
       });
   }, [showId]);
 
-  const mapShowProperties = (show: any) => {
+  const mapShowBasicProperties = (show: any) => {
     let filteredShow: any = {};
     Object.keys(show).map(key => {
       ['name', 'type', 'language', 'status', 'officialSite'].includes(key) && (filteredShow[key] = show[key]);
     });
-    const mappedProperties = Object.keys(filteredShow).map(key => {
+    const mappedBasicProperties = Object.keys(filteredShow).map(key => {
       return (
         <Tr>
           <Td>{key.charAt(0).toUpperCase() + key.slice(1)}</Td>
@@ -62,7 +52,7 @@ const SingleShow = () => {
         </Tr>
       );
     });
-    return mappedProperties;
+    return mappedBasicProperties;
   };
 
   return (
@@ -71,17 +61,13 @@ const SingleShow = () => {
         <LoadingPage />
       ) : (
         <>
-            <HStack marginBottom={14}>
-              <Link to='/'>
-                <Button>Go Back!</Button>
-              </Link>
-              <Heading width={'80%'} textAlign={'center'}>
-                {show ? `Show: ${show?.name}` : 'Some error ocurred. Wrong request.'}
-              </Heading>
-            </HStack>
-          <Table variant='simple' marginTop={5} width={'50%'} marginX={'auto'}>
-            <Tbody>{show && mapShowProperties(show)}</Tbody>
-          </Table>
+          <SinglePageHeader show={show} />
+          <HStack height={'100vh'} alignItems={'self-start'} justifyContent={'space-between'} wrap={'wrap'}>
+            <Image maxWidth={'450px'} src={show?.image?.original} alt={`${show?.name} Cover`} objectFit='cover' />
+            <Table variant='simple' marginTop={5} width={'50%'} marginX={'auto'}>
+              <Tbody>{show && mapShowBasicProperties(show)}</Tbody>
+            </Table>
+          </HStack>
         </>
       )}
       {hasError && (
