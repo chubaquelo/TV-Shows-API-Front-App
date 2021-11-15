@@ -4,7 +4,7 @@ import { IAPIResponseShow } from '../core/adapters/IShowsRepository';
 import { GetShows } from '../core/interactors/GetShows';
 import { APIShowsRepository } from '../core/repositories/APIShowsRepository';
 import ShowCard from '../components/showCard/ShowCard';
-import LoadingPage from '../components/utils/loadingPage';
+import LoadingPage from '../components/utils/LoadingPage';
 
 const Main = () => {
   const [isLoadingPage, setIsLoadingPage] = useState<boolean>(true);

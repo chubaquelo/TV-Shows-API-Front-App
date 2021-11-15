@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { GetShows } from '../core/interactors/GetShows';
 import { APIShowsRepository } from '../core/repositories/APIShowsRepository';
-import LoadingPage from '../components/utils/loadingPage';
+import LoadingPage from '../components/utils/LoadingPage';
 import { useParams } from 'react-router-dom';
 import { Show } from '../core/entities/show';
 import { StarsRating } from "stars-rating-react-hooks";
