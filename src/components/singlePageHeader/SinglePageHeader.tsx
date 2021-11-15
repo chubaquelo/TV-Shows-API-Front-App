@@ -14,7 +14,7 @@ function SinglePageHeader(props: SinglePageHeaderProps) {
       <Link to='/'>
         <Button colorScheme={'twitter'}>Go Back!</Button>
       </Link>
-      <Heading width={'80%'} textAlign={'center'} color={'white'}>
+      <Heading width={'80%'} textAlign={'center'} color={'white'} data-testid={'single-show-title'}>
         {show ? `Show: ${show?.name}` : 'Some error ocurred. Wrong request.'}
       </Heading>
     </HStack>

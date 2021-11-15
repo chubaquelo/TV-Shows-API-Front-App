@@ -5,8 +5,8 @@ const LoadingPage = () => {
   return (
     <Center width={'full'} heigth={'100vh'}>
       <VStack spacing={5}>
-        <Text fontSize={'lg'}>Loading, please wait...</Text>
-        <Spinner size='xl' />
+        <Text fontSize={'lg'} color={'white'}>Loading, please wait...</Text>
+        <Spinner color={'white'} size='xl' />
       </VStack>
     </Center>
   );

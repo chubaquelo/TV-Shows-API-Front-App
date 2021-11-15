@@ -80,8 +80,8 @@ const SingleShow = () => {
         <>
           <SinglePageHeader show={show} />
           <HStack height={'full'} alignItems={'self-start'} justifyContent={'center'} wrap={'wrap'}>
-            <Image maxWidth={'450px'} src={imageSrc} alt={`${show?.name} Cover`} objectFit='cover' borderRadius={'10px'} marginRight={[0, 0, 5, 10]} />
-            <Table variant='simple' marginTop={5} width={'50%'} marginX={'auto'} backgroundColor={'#ffffff10'} borderRadius={'10px'} color={'white'}>
+            <Image maxWidth={'450px'} src={imageSrc} alt={`${show?.name} Cover`} objectFit='cover' borderRadius={'10px'} marginRight={[0, 0, 5, 10]} marginBottom={['5', '5', '0']} />
+            <Table variant='simple' marginTop={5} width={['100%', '100%', '50%']} marginX={'auto'} backgroundColor={'#ffffff10'} borderRadius={'10px'} color={'white'}>
               <Tbody>{show && mapShowBasicProperties(show)}</Tbody>
               <Tr>
                 <Td>Rating</Td>
