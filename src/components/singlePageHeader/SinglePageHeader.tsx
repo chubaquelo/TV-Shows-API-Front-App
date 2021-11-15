@@ -12,9 +12,9 @@ function SinglePageHeader(props: SinglePageHeaderProps) {
   return (
     <HStack marginBottom={14}>
       <Link to='/'>
-        <Button>Go Back!</Button>
+        <Button colorScheme={'twitter'}>Go Back!</Button>
       </Link>
-      <Heading width={'80%'} textAlign={'center'}>
+      <Heading width={'80%'} textAlign={'center'} color={'white'}>
         {show ? `Show: ${show?.name}` : 'Some error ocurred. Wrong request.'}
       </Heading>
     </HStack>

@@ -11029,6 +11029,11 @@ stackframe@^1.1.1:
   resolved "https://registry.yarnpkg.com/stackframe/-/stackframe-1.2.0.tgz#52429492d63c62eb989804c11552e3d22e779303"
   integrity sha512-GrdeshiRmS1YLMYgzF16olf2jJ/IzxXY9lhKOskuVziubpTYcYqyOwYeJKzQkwy7uN0fYSsbsC4RQaXf9LCrYA==
 
+stars-rating-react-hooks@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/stars-rating-react-hooks/-/stars-rating-react-hooks-0.2.4.tgz#1fde77f897b9c3e323a03318f0af6b5dd0bb4346"
+  integrity sha512-iubQyp83pINfXiNnGyseawUw79N651Lhu+iapRtFuBCAoRfflThgp+VgRNyLBnxnddNPJp+dapAC0hXKbpEmHw==
+
 static-extend@^0.1.1:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/static-extend/-/static-extend-0.1.2.tgz#60809c39cbff55337226fd5e0b520f341f1fb5c6"
