@@ -1,5 +1,5 @@
-# Restaurant-Webpack
-Restaurant plain webpage with four sections, using Webpack and javascript to navigate through them.
+# TV Shows API Front App
+SPA showing last 10 shows from TVMaze.com API and it's information.
 
 ![](https://i.imgur.com/B2fWRm3.png)
 
