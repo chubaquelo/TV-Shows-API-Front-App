@@ -7,9 +7,6 @@ Restaurant plain webpage with four sections, using Webpack and javascript to nav
 - REACT
 - CHAKRA UI
 
-## Live Demo
-[Click to open demo](http://www.google.com
-
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
