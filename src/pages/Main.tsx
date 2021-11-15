@@ -11,7 +11,7 @@ const Main = () => {
   const [shows, setShows] = useState<IAPIResponseShow[]>([]);
   const [hasError, setHasError] = useState<boolean>(false);
   const [searchQuery, setSearchQuery] = useState<string>('girls');
-  
+
   useEffect(() => {
     const useShows = new GetShows(new APIShowsRepository());
     setIsLoadingPage(true);
